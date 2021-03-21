@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WIP - Form append</title>
+        <style>
+            body {
+                text-align: center;
+                margin: 0;
+            }
+
+            .submit {
+                font: bold 18px /30px arial;
+                background: #777;
+                border-radius: 5px;
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                border: none;
+            }
+        </style>
+        <script>
+            'use strict';
+
+            addEventListener('load', function () {
+                // Submit callback //
+                function submit_callback(message) {
+                    alert(message);
+                }
+
+                // Error callback //
+                function error_callback(error_code) {
+                    alert('Error: ' + error_code);
+                }
+
+                // Init WIP //
+                const wip = new WIP(submit_callback, error_callback);
+            });
+        </script>
+        <!-- Load WIP -->
+        <link rel="stylesheet" href="../wip.css">
+        <script src="../wip.js" defer></script>
+    </head>
+    <body>
+        <!-- Form data -->
+        <form class="wip-form" enctype="multipart/form-data" method="POST" action="form_append.php">
+            <!-- Upload image button -->
+            <input class="wip-input-button" wip-text="Upload images" type="file" name="images" accept="image/jpeg image/png image/webp" multiple>
+            <!-- Additional form data -->
+            <input name="text" value="Some data ..." hidden> 
+            <input class="submit" type="submit">
+            <!-- Image preview block -->
+            <div class="wip-preview"></div>
+        </form>
+    </body>
+</html>

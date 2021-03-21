@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WIP - Local processing example</title>
+        <script>
+            'use strict';
+
+            addEventListener('load', function () {
+                // Init WIP //
+                const wip = new WIP();
+            });
+        </script>
+        <!-- Load WIP -->
+        <link rel="stylesheet" href="../wip.css">
+        <script src="../wip.js" defer></script>
+    </head>
+    <body style="margin: 0; text-align: center">
+        <!-- Upload image button -->
+        <input class="wip-input-button" wip-text="Upload images" type="file" accept="image/jpeg image/png image/webp" multiple>
+        <!-- Image preview block (add "wip-download" class for download possibility) -->
+        <div class="wip-preview wip-download"></div>
+    </body>
+</html>
